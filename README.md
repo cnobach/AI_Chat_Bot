@@ -13,4 +13,10 @@ Once the file is edited, the **train.py** file needs to be ran again in order to
 
 After this, all that needs to be done is to run **chat.py** and the application will run in the terminal.
 
-To the bot, you can type greetings to it such as "Hello", "How are you?", etc. You can also ask questions about what they sell at the store, how much the items cost, what forms of payment are accepted, and you can even ask it to tell you a joke.
+To the bot, you can type greetings to it such as "Hello", "How are you?", etc. You can also ask questions about what they sell at the store, how much the items cost, what forms of payment are accepted, and you can even ask it to tell you a joke. 
+
+## Dependencies
+
+I built the application within a Conda Virtual Environment, and it mainly utilizes 2 libraries - PyTorch and NLTK. 
+
+PyTorch is used to create the Neural Network (see **model.py**), and NLTK is used for the Natural Language Processing across the application (see **nltk_utils.py**). 
