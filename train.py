@@ -1,5 +1,4 @@
 import json
-from tkinter import Y
 from nltk_utils import tokenize, stem, bag_of_words
 import numpy as np
 import torch

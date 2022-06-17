@@ -2,6 +2,7 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 import numpy as np
 
+# Uncomment below if first time running program, comment back after
 # nltk.download('punkt')
 
 
