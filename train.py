@@ -28,7 +28,7 @@ for intent in intents['intents']:
         xy.append((word, tag))
         
 # Set up words to ignore, and stem all words excluding the ignores
-ignore_words = ['?', '!', '.', ',']
+ignore_words = ['?', '!', '.', ',']  
 all_words = [stem(word) for word in all_words if word not in ignore_words]
 # Sort all words, and narrow down to only unique words
 all_words = sorted(set(all_words))
@@ -38,6 +38,7 @@ tags = sorted(set(tags))
 # Create training lists for y & x
 x_train = []
 y_train = []
+
 # Loop through xy list
 for(pattern, tag) in xy:
     # Get the bad of words for xtrain and append
@@ -78,7 +79,7 @@ train_loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
-# Loss and optimmizer
+# Loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -105,10 +106,10 @@ for epoch in range(num_epochs):
     
     # Just prints loss on every 100th run
     if(epoch + 1) % 100 == 0:
-        print(f'epoch {epoch+1}/{num_epochs}, loss={loss.item():.4f}')
+        print(f'epoch {epoch+1}/{num_epochs}, loss={loss.item():.8f}')
 
 # Prints the final loss amout
-print(f'Final Loss: loss={loss.item():.4f}')
+print(f'Final Loss: loss={loss.item():.8f}')
 
 # Saving the data model
 data = {
@@ -117,7 +118,7 @@ data = {
     "output_size":output_size,
     "hidden_size":hidden_size,
     "all_words":all_words,
-    "tags":tags,
+    "tags":tags
 }
 
 # Writing the data to pickle file
