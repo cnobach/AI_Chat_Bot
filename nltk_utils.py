@@ -5,15 +5,20 @@ import numpy as np
 # Uncomment below if first time running program, comment back after
 # nltk.download('punkt')
 
-
 # Tokenizes the sentence and returns the list
 def tokenize(sentence):
     return nltk.word_tokenize(sentence)
+
+# What do you sell here?
+# ['What', 'do', 'you', 'sell', 'here', '?'] - tokenized
 
 # Stems a word and returns it (lowercase)
 def stem(word):
     stemmer = PorterStemmer()
     return stemmer.stem(word.lower())
+
+# 'Organize', 'Organized', 'Organization"
+# 'Organ',    'Organ',     'Organ'
 
 def bag_of_words(tokenized, all_words):
     # Stem all wokenized words
@@ -27,3 +32,8 @@ def bag_of_words(tokenized, all_words):
             bag[i] = 1.0
     
     return bag
+
+# What do you sell here?
+# ['What', 'do', 'you', 'sell', 'here', '?'] - tokenized
+# [  0   ,  0  ,  0   ,  0    ,  0    ,  0 ]
+# [  1   ,  1  ,  1   ,  1    ,  0    ,  1 ]
