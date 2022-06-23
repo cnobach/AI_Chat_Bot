@@ -9,8 +9,8 @@ import numpy as np
 def tokenize(sentence):
     return nltk.word_tokenize(sentence)
 
-# What do you sell here?
-# ['What', 'do', 'you', 'sell', 'here', '?'] - tokenized
+# What do you sell here?????
+# ['What', 'do', 'you', 'sell', 'here', '?????'] - tokenized
 
 # Stems a word and returns it (lowercase)
 def stem(word):
