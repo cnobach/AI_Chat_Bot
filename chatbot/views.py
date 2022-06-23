@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the chatbot index")
+    template = loader.get_template('chatbot/index.html')
+    context = {
+        'heading': 'AI Chat Bot'
+    }
+    return render(request, 'chatbot/index.html', context)
